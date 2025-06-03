@@ -51,9 +51,21 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             ElevatedButton(
               onPressed: () async{
-                await StripeService.instance.makePayment();
+                await StripeService.instance.makePayment(20);
               },
-              child: Text('Payment'),
+              child: Text('Payment \$20'),
+            ),
+            ElevatedButton(
+              onPressed: () async{
+                await StripeService.instance.makePayment(10);
+              },
+              child: Text('Payment \$10'),
+            ),
+            ElevatedButton(
+              onPressed: () async{
+                await StripeService.instance.makePayment(30);
+              },
+              child: Text('Payment \$30'),
             ),
           ],
         ),
